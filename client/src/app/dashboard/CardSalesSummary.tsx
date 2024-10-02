@@ -119,7 +119,6 @@ const CardSalesSummary = () => {
                       day: "numeric",
                     });
                   }}
-                  labelStyle={{ backgroundColor: "text-gray-400" }}
                 />
                 <Bar
                   dataKey="totalValue"
