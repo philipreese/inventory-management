@@ -8,11 +8,12 @@ export const getProducts = async (
   res: Response
 ): Promise<void> => {
   try {
-    const search = req.query.search?.toString();
+    const search = req.query.search?.toString().toLocaleLowerCase();
     const products = await prisma.products.findMany({
       where: {
         name: {
           contains: search,
+          mode: "insensitive",
         },
       },
     });
