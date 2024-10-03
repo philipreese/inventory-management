@@ -20,6 +20,10 @@ const Navbar = () => {
     dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
   };
 
+  const showNotifications = useAppSelector(
+    (state) => state.global.showNotifications
+  );
+
   return (
     <div className="flex justify-between items-center w-full mb-7">
       {/* LEFT SIDE */}
@@ -56,7 +60,12 @@ const Navbar = () => {
           </div>
           <div className="relative">
             <Bell className="cursor-pointer text-gray-500" size={24} />
-            <span className="absolute -top-2 -right-2 inline-flex items-center justify-center px-[0.4rem] py-1 text-xs font-semibold leading-none text-red-100 bg-red-400 rounded-full">
+            <span
+              className={`absolute -top-2 -right-2 inline-flex items-center justify-center px-[0.4rem] py-1
+              text-xs font-semibold leading-none text-red-100 bg-red-400 rounded-full ${
+                showNotifications ? "" : "hidden"
+              }`}
+            >
               3
             </span>
           </div>
