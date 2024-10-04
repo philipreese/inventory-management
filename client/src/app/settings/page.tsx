@@ -47,6 +47,7 @@ const Settings = () => {
   const toggleShowNotifications = () => {
     dispatch(setShowNotifications(!showNotifications));
   };
+  userSettings[2].value = showNotifications;
 
   return (
     <div className="w-full">
